@@ -61,7 +61,8 @@ function loadDatabase() {
         nextCommentId: 1,
       };
     } else {
-      database = yaml.load(DATABASE_FILE_NAME);
+
+      database = yaml.load(fs.readFileSync(`./${DATABASE_FILE_NAME}`, 'utf8'));
     }
   });
 }
